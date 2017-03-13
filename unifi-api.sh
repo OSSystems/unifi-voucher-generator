@@ -1,9 +1,6 @@
 #!/bin/sh
 
-#username=ubnt
-#password=ubnt
-#baseurl=https://unifi:8443
-#site=default
+. ./unifi-api-data.sh
 
 [ -f ./unifi_sh_env ] && . ./unifi_sh_env
 
