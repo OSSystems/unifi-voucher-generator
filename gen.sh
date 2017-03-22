@@ -7,7 +7,7 @@ pwd=`pwd`
 # Generation settings
 time=$(( 12 * 60 ))
 amount=108
-note="TEST"
+note="Generated using Unifi Voucher Generator"
 
 # Generate vouchers
 unifi_login
