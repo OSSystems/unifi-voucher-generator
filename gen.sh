@@ -6,7 +6,7 @@ pwd=`pwd`
 
 # Generation settings
 time=$(( 12 * 60 ))
-amount=15
+amount=108
 note="TEST"
 
 # Generate vouchers
