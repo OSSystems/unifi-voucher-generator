@@ -35,7 +35,7 @@ unifi_requires() {
 
 unifi_login() {
     # authenticate against unifi controller
-    ${curl_cmd} --data "{'username':'$username', 'password':'$password'}" $baseurl/api/login
+    ${curl_cmd} --data "{'username':'$username', 'password':'$password', 'site_name':'$site', 'for_hotspot':true, 'strict':true, 'remember':false}" $baseurl/api/login
 }
 
 unifi_logout() {
