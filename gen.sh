@@ -5,7 +5,7 @@ pwd=`pwd`
 . $pwd/unifi-api.sh
 
 # Generation settings
-time=60
+time=$(( 12 * 60 ))
 amount=15
 note="TEST"
 
