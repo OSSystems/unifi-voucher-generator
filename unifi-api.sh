@@ -163,7 +163,9 @@ unifi_delete_voucher() {
         return
     fi
     id=$1
+    printf "$id: "
     ${curl_cmd} --data "json={'cmd':'delete-voucher','_id':'${id}'}" $baseurl/api/s/$site/cmd/hotspot
+    echo ""
 }
 
 # stat/sta
