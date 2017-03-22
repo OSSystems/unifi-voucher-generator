@@ -1,36 +1,26 @@
-body {
-    font-family:"sans-serif";
-    color:#444;
-}
-
-.line1 {
-    font-size:17px;
-}
-
-.line2 {
-    font-size:15px;
-}
-
-.line3 {
-    font-size:17px;
-    letter-spacing:2px;
-    padding-top:10px;
-}
-
 .voucher {
-    width: 250px;
-
-    margin-bottom:-1px;
-    margin-right:-1px;
-
-    padding-top:10px;
-    padding-left:15px;
-    padding-right:15px;
-    padding-bottom:10px;
-
     float: left;
+    height: 338px;
+    margin: 25px 0 0 0;
+    width: 225px;
+}
 
-    border-style:dashed;
-    border-width:1px;
-    border-color:#eee;
+body {
+    margin: 0;
+    padding: 0;
+}
+
+img.background-image {
+    width: 100%;
+}
+
+span.password {
+    bottom: 67px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 17px;
+    font-weight: lighter;
+    letter-spacing: 3px;
+    position: relative;
+    left: 47px;
+    text-transform: uppercase;
 }

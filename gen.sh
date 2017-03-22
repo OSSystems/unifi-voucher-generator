@@ -17,23 +17,32 @@ unifi_logout
 
 vouchers=`awk -F"[,:]" '{for(i=1;i<=NF;i++){if($i~/code\042/){print $(i+1)} } }' vouchers.tmp | sed 's/\"//g'`
 
-# HTML Settings
-line1="COMPANY WiFi Voucher"
-line2="60 minutes of use"
-
 # Build HTML
 if [ -e vouchers.html ]; then
   echo "Removing old vouchers."
   rm vouchers.html
 fi
 
-echo '<html><head><link rel="stylesheet" href="style.css" /></head><body>' >> vouchers.html
+cat <<EOF >> vouchers.html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  </head>
+  <body>
+EOF
 
-for code in $vouchers
+for password in $vouchers
 do
-    line3=$code
-    html='<div class="voucher"><div class="line1">'$line1'</div><div class="line2">'$line2'</div><div class="line3">'$line3'</div></div>'
-    echo $html >> vouchers.html
+    password=`echo $password | sed 's/.\{5\}/& /g'`
+    cat <<EOF >> vouchers.html
+<div class="voucher">
+  <img class="background-image" src="background-image.png" alt="A background image that should contain all the information about the voucher except the password">
+  <span class="password">$password</span>
+</div>
+EOF
 done
 
 echo "</body></html>" >> vouchers.html
