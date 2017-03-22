@@ -6,7 +6,7 @@
 
 cookie=/tmp/unifi_cookie
 
-curl_cmd="curl --tlsv1 --silent --cookie ${cookie} --cookie-jar ${cookie} --insecure "
+curl_cmd="curl --tlsv1.2 --silent --cookie ${cookie} --cookie-jar ${cookie} --insecure "
 
 named_args_to_payload() {
     payload=""
