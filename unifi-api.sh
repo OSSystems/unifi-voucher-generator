@@ -147,7 +147,6 @@ unifi_create_voucher() {
 # stat/voucher
 # query(create_time)
 unifi_get_vouchers() {
-    set -x
     if [ $# -lt 0 ] ; then
         echo "Usage: $0 [token]"
         return
