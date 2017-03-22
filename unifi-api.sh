@@ -154,7 +154,6 @@ unifi_get_vouchers() {
     token=$1
     [ "$token" != "" ] && other_payload="'create_time':${token}"
     ${curl_cmd} --data "json={${other_payload}}" $baseurl/api/s/$site/stat/voucher
-    echo ${curl_cmd} --data "json={${other_payload}}" $baseurl/api/s/$site/stat/voucher
 }
 
 # delete-voucher(id)
