@@ -24,3 +24,9 @@ span.password {
     left: 47px;
     text-transform: uppercase;
 }
+
+@media print {
+    @page {
+        margin: 0 auto 0;
+    }
+}
