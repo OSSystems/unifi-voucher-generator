@@ -1,7 +1,10 @@
 .voucher {
+    border-color: #777;
+    border-style: dashed;
+    border-width: 1px;
     float: left;
     height: 338px;
-    margin: 25px 0 0 0;
+    margin: 25px -2px -2px 0;
     width: 225px;
 }
 
