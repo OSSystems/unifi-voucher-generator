@@ -8,10 +8,11 @@ pwd=`pwd`
 time=$(( 12 * 60 ))
 amount=108
 note="Generated using Unifi Voucher Generator"
+quota=0 # "0" means multi-use, "1" one-time use
 
 # Generate vouchers
 unifi_login
-voucherID=`unifi_create_voucher $time $amount note="$note"`
+voucherID=`unifi_create_voucher $time $amount quota=$quota note="$note"`
 unifi_get_vouchers $voucherID > vouchers.tmp
 unifi_logout
 

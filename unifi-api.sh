@@ -130,13 +130,13 @@ unifi_backup() {
 # @returns create_time
 unifi_create_voucher() {
     if [ $# -lt 2 ] ; then
-        echo "Usage: $0 <minutes> <n> [note=notes] [up=kbps] [down=kbps] [bytes=MB]"
+        echo "Usage: $0 <minutes> <n> [note=notes] [up=kbps] [down=kbps] [bytes=MB] [quota=[0,1]]"
         return
     fi
     minutes=$1
     n=$2
     other_payload=`named_args_to_payload "$@"`
-    token=`${curl_cmd} --data "json={'cmd':'create-voucher','expire':${minutes},'n':$n ${other_payload}},'quota': 0" $baseurl/api/s/$site/cmd/hotspot \
+    token=`${curl_cmd} --data "json={'cmd':'create-voucher','expire':${minutes},'n':$n ${other_payload}}" $baseurl/api/s/$site/cmd/hotspot \
         | sed -e 's/.*"create_time"\s*:\s*\([0-9]\+\).*/\1/'`
     echo "token=$token"
     if [ "$token" != "" ] ; then
