@@ -11,7 +11,7 @@ note="Generated using Unifi Voucher Generator"
 
 # Generate vouchers
 unifi_login
-voucherID=`unifi_create_voucher $time $amount $note`
+voucherID=`unifi_create_voucher $time $amount note="$note"`
 unifi_get_vouchers $voucherID > vouchers.tmp
 unifi_logout
 
